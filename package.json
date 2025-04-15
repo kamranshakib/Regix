@@ -1,0 +1,21 @@
+{
+  "name": "omid-project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mogoose": "^0.0.1-security",
+    "mongoose": "^8.13.2",
+    "qrcode": "^1.5.4"
+  }
+}
