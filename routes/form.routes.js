@@ -3,6 +3,7 @@ const route = express.Router();
 
 const Set = require('../controllers/form.controllers');
 
-route.get('/', Set.SetForm);
+route.get('/', Set.GetForm);
+route.post('/post', Set.SetForm);
 
 module.exports = route;
