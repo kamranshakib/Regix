@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>کارت شمولیت امتحان</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: "Tahoma", sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      width: 900px;
+      background: #fcd303;
+      border: 1px solid black;
+      padding: 25px 35px;
+      margin: auto;
+      font-size: 14px;
+      direction: rtl;
+    }
+    .header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .line {
+      border-bottom: 1px solid black;
+      margin: 8px 0 10px;
+    }
+    .title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+    .col {
+      width: 60%;
+      display: flex;
+    }
+    .label {
+      width: 130px;
+      font-weight: bold;
+    }
+    .barcode-row {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .barcode-label {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    #barcode {
+      height: 40px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 25px;
+      border-top: 1px dashed black;
+      padding-top: 10px;
+    }
+    .print-button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 25px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="examCard">
+  <div class="header">
+    د افغانستان اسلامی امارت<br>
+    اداره ملی امتحانات<br>
+    د خدماتو د برابرولو آمریت
+  </div>
+  <div class="line"></div>
+  <div class="title">کارت شمولیت امتحان آزمایشی ولایت هرات</div>
+  
+  
+
+  <div class="row">
+    <div class="col"><span class="label">نوم:</span>ali </div>
+    <div class="col"><span class="label">د پلار نوم:</span> غلام حیدر</div>
+  </div>
+
+  <div class="row">
+    <div class="col"><span class="label">آی دی:</span> 1384</div>
+    <div class="col"><span class="label">شماره ثبت:</span> P24008274</div>
+  </div>
+  <div class="row">
+    <div class="col"><span class="label">سال تولد:</span> 1384</div>
+    <div class="col"><span class="label">سال فراغت:</span> 1403</div>
+  </div>
+  <div class="row">
+    <div class="col"><span class="label">سطح تحصیل:</span> ثانوی</div>
+    <div class="col"><span class="label">ولایت:</span> هرات</div>
+  </div>
+  <div class="row">
+    <div class="col"><span class="label">شماره حوزه:</span> 11</div>
+    <div class="col"><span class="label">زمان امتحان:</span> ---</div>
+  </div>
+
+  <div class="barcode-row">
+    <span class="barcode-label">بارکد:</span>
+    <svg id="barcode"></svg>
+  </div>
+
+  <div class="footer">
+    برای شمول در امتحان از کارت خود استفاده نمایید.
+  </div>
+</div>
+
+<button class="print-button" onclick="printCard()">چاپ کارت</button>
+
+<script>
+  // تولید بارکد واقعی
+  JsBarcode("#barcode", "P24008274", {
+    format: "CODE128",
+    lineColor: "#000",
+    width: 2,
+    height: 40,
+    displayValue: false
+  });
+
+  // تابع چاپ کارت
+  function printCard() {
+    const printContents = document.getElementById('examCard').outerHTML;
+    const originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    location.reload(); // بازگشت به حالت اولیه
+  }
+</script>
+
+</body>
+</html>
