@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print-Friendly Page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+</head>
+
+<body>
+  <div class="contains" id="terms">
+    <div class="imag_content">
+      <h1>امارت اسلامی افغانستان <span>اداره ملی امتحانات</span></h1><img src="log.png" alt="">
+      <h1>د افغانستان اسلامی امارت <span>د ازموینو ملی اداره</span> </h1>
+    </div>
+    <div class="image_place">
+      <img src="log.png" alt="محل عکس">
+    </div>
+    <div class="content">
+      <p class="id">آی دی <span>133434534534</span></p>
+      <p class="name">نام <span>خالد</span></p>
+      <p class="Lname">تخلص/تخلص <span>سیفی</span></p>
+      <p class="fname">د پلارنوم /نام پدر<span>سیف الله</span></p>
+      <p class="GFname">د نیکه نوم/نام پدر کلان<span>محمد نعیم</span></p>
+      <p class="birthday">د زیژیدلو کال /سال تولد<span>1388</span></p>
+      <p class="graduateY">د فراغت کال /سال فراغت<span>1404</span></p>
+      <p class="School">ښوونخی /مکتب<span>چهار طاق</span></p>
+      <p class="Province">ولایت/ولایت <span>بادغیس</span></p>
+    </div>
+    <div class="registerCard">
+      <h1>کارت شمولیت امتحان آزمایشی ولایت هرات</h1>
+      <div class="allContent">
+        <p class="lExam">د آزموینی ژبه /لسان امتحان <span>دری</span></p>
+        <p class="nCenter">د مرکز نوم/اسم مرکز <span>هرات</span></p>
+        <p class="loExam">د آزموینی ځای /محل امتحان <span>آموزشګاه عالی امید افغانستان</span></p>
+        <p class="noRoom">د خونی شمیره/نمبر اطاق <span>43</span></p>
+      </div>
+    </div>
+    <div class="barCode-Content">
+      <p class="time">زمان امتحان <span>2 بعد از ظهر 21 حمل</span></p>
+      <div class="barcode">
+        <svg id="barcode"></svg>
+      </div>
+      <p class="note">برای حل ورق جوابات از قلم رنگ سیاه استفاده نماید</p>
+    </div>
+  </div>
+  <button class="btn-print" onclick="window.print()"><i class="fas fa-print" style="margin-right: 2%;"></i>Print Page</button>
+  <script>
+    JsBarcode("#barcode", "133434534534", {
+      format: "CODE128",
+      lineColor: "#000",
+      width: 2,
+      height: 40,
+      displayValue: true
+    });
+
+    const data = [
+      { id: 1, name: "Item One", value: 100 },
+      { id: 2, name: "Item Two", value: 200 },
+      { id: 3, name: "Item Three", value: 300 },
+    ];
+
+    const tbody = document.getElementById("data-table");
+    data.forEach(item => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.value}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+
+</html>
