@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: dana;
+
+}
+body{
+    height: 100vh;
+    font-family: dana;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: dana;
+}
+
+.container{
+    width: 1000px;
+    height: 475px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.189);
+    display: flex;
+}
+.container .right{
+    background: linear-gradient(180deg,rgb(0, 88, 67) 20%, rgba(1, 122, 84, 0.833) 70% );
+    width: 300px;
+    height: 100%;
+    border-radius: 30px 10px 10px 30px;
+    overflow: hidden;
+}
+.container .left{
+    /* background-color: antiquewhite; */
+    width: 70%;
+    height: 100%;
+}
+.container .left .main-form{
+display: flex;
+direction: rtl;
+margin-top: 0px;
+}
+.container .left .main-form input{
+    background-color: #0f966015;
+    width: 200px;
+
+}
+.main-form .one{
+    padding: 15px;
+}
+.main-form .one input{
+    height: 40px;
+    padding: 5px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 7px;
+    outline-color: rgb(6, 139, 104);
+    border-right: 2px solid rgba(0, 0, 0, 0.306);
+    font-size: 15px;
+
+}
+select{
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 7px;
+    outline-color: rgb(7, 135, 90);
+    border-right: 2px solid rgba(0, 0, 0, 0.306);
+    background-color: rgba(12, 144, 120, 0.091);
+    font-size: 16px;
+}
+
+::placeholder{
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.footer{
+    background-color: rgba(130, 130, 130, 0.059);
+    height: 90px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.footer button{
+    padding: 4px 25px;
+    border: none;
+    background-color: rgb(6, 135, 96);
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(6, 110, 79);
+    transition: all .3s;
+
+
+}
+
+.logo {
+ width: 100%;
+ height: 220px;
+ /* background-color: yellow; */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+.logo img{
+    width: 60%;
+}
+.desc{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+   margin-top: 50px;
+
+}
+.desc img{
+    width: 90%;
+}
+.header{
+    
+    height: 100px;
+    background-color: rgba(138, 137, 137, 0.066);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color: #fff;
+
+    
+}
+.title h2{
+    font-family: B Titr;
+    font-size: 1.5rem;
+
+
+
+}
+.Shoar{
+    font-size: 1.4rem;
+    font-family: 2  Tabassom;
+    transform:translateY(20px);
+
+}
+
+@media (max-width: 988px) {
+    body {
+      flex-direction: column;
+      align-items: stretch;
+      height: auto;
+    }
+    .container .left .main-form input{
+        background-color: #0f966015;
+        width: 300px;
+    
+    }
+  
+    .container {
+      flex-direction: column-reverse; /* .right میره بالا */
+      width: 95%;
+      height: auto;
+      margin: 10px auto;
+      box-shadow: none;
+    }
+  
+    .container .right {
+        width: 100%;
+        height: 270px; /* اینجا قبلاً height: auto هست، ولی اگه ارتفاع زیادی داشت... */
+        min-height: 200px; /* این خط رو اضافه کن که دیگه خیلی بلند نباشه */
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+    .container .left{
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.164);
+        
+    }
+    
+  
+    .logo {
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .logo img {
+      width: 40%;
+      max-width: 150px;
+    }
+  
+    .title {
+      margin-top: 10px;
+      text-align: center;
+      color: white;
+    }
+  
+    .title h2 {
+      font-size: 1rem;
+      
+    }
+    .header h1{
+        font-size: 20px;
+    }
+    .header{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        /* background-color: red; */
+    }
+  
+    .Shoar {
+      font-size: 1.2rem;
+    }
+  
+    .container .left {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .main-form {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .main-form .one {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* قرارگیری محتوا در وسط */
+        border-bottom: 1px solid rgba(3, 95, 0, 0.096);
+        border-top: 1px solid rgba(0, 0, 0, 0.073);
+        margin-top: 10px;
+    }
+    
+    .main-form .one input {
+    
+        font-size: 16px;
+        height: 45px;
+        padding: 5px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 7px;
+        outline-color: rgb(0, 116, 75);
+        border-right: 2px solid rgba(0, 0, 0, 0.306);
+    }
+    
+  
+    select {
+        
+            width: 300px;
+            height: 40px;
+            padding: 5px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 7px;
+            outline-color: rgb(7, 135, 90);
+            border-right: 2px solid rgba(0, 0, 0, 0.306);
+            background-color: rgba(12, 144, 120, 0.091);
+            font-size: 16px;
+        
+    }
+  
+    .footer {
+      flex-direction: column;
+      height: auto;
+      padding: 15px 0;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .footer button {
+      width: 60%;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 7px;
+    }
+    .hi{
+        width: 100%;
+    }
+  }
