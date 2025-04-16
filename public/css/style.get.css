@@ -337,3 +337,40 @@ button:hover{
     }
     
 } */
+@@media print {
+  * {
+    box-shadow: none !important;
+    background: none !important;
+    color: black !important;
+  }
+
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .contains {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    padding: 10mm;
+    border: none;
+  }
+
+  .content {
+    width: 25%;
+    margin-top: 0;
+  }
+
+  .middle {
+    width: 50%;
+  }
+
+  .final_div {
+    display: none !important; /* اون قرمزه حذف شه */
+  }
+}
