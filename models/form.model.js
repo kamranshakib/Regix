@@ -10,7 +10,7 @@ const FormSchema = new mongoose.Schema({
     BirthDay: {type:Number},       // روز تولد
     Graduation: {type:Number},    // سال فراغت
     School: {type:String},       // مکتب
-    Province: {type:Number},    // ولایت
+    Province: {type:String},    // ولایت
     ExamLang: {type:String},   // زبان امتحان
     CenterName: {type:String},// اسم مرکز
     ExamPlace: {type:String},// مکان امتحان

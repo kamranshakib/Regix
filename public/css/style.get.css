@@ -2,33 +2,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: century;
+    font-family: dana
 }
 
 body {
-    /* display: flex; */
-    /* align-items: center; */
-    justify-content: center;
-    /* flex-direction: column; */
     gap: 5%;
     padding: 20px;
-    /* height: 100vh; */
 }
 
 .contains {
     border: 1px solid black;
     padding: 2%;
     width: 100%;
-    position: relative;
-    background-image: url('log.png');
-    background-repeat: no-repeat;
-    background-position-y: 63%;
-    background-blend-mode: color;
-    background-position-x: center;
-    background-size: 30vh;
-    text-align: right;
+    display: flex;
+    gap: 5%;
+    overflow: hidden;
+
+}
+.content div{
+    display: flex;  
+    justify-content: space-between;
+    gap: 5%;
+}
+.content{
+    width: 20%;
+    margin-top: 7%;
 }
 
+.middle{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    justify-content: center;
+}
+
+.middle .top_middle{
+    display: flex;
+    justify-content: space-between;
+}
+.middle h3{
+    
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+.botton_middle{
+    margin-top: 10px;
+    /* margin-right: 190px; */
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+
+}
+.botton_middle div{
+    /* background-color: red; */
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    
+}
+.middle .image_logo img{
+    width: 100px;
+}
+
+.final_div{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    transform: translateY(200px);
+}
+.final_div .timeOf{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 
 .contains .imag_content {
     display: flex;
     align-items: center;
@@ -60,7 +111,7 @@ body {
 }
 
 .contains .image_place img {
-    /* position: absolute; */
+   
     width: 15vh;
     height: 15vh;
 }
@@ -92,7 +143,7 @@ body {
 }
 
 .contains .content .name span {
-    margin-right: 19%;
+    margin-right: 17%;
 }
 
 .contains .content .Lname span {
@@ -146,7 +197,7 @@ body {
 }
 
 .contains .registerCard {
-    /* text-align: center; */
+ 
     width: 35%;
     left: 30%;
     top: 43%;
@@ -186,10 +237,7 @@ body {
 
 .contains .barCode-Content {
     margin-right: 5%;
-    /* display: flex; */
-    /* align-content: center;
-    justify-content: center;
-    flex-direction: column; */
+   
     width: 50vh;
     text-align: center;
     padding: 2%;
@@ -220,11 +268,6 @@ body {
     margin: 2% auto 1.5rem;
 }
 
-/* .barcode {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-  } */
 
 .contains .barCode-Content .note {
     text-align: center;
@@ -247,7 +290,7 @@ button:hover{
     background: rgb(8, 102, 8);
 }
 
-/* Print styles */
+
 @media print {
     body {
         background: white;
@@ -292,23 +335,5 @@ button:hover{
     .contains .registerCard .allContent .noRoom span {
         margin-right: 10%;
     }
-    /* .contains .barCode-Content {
-        margin-right: 5%;
-        width: 50vh;
-        text-align: center;
-        padding: 2%;
-        top: 45%;
-        left: 2%;
-        position: absolute;
-    }
-    .contains .barCode-Content .barcode {
-        width: 32vh;
-        height: 5vh;
-        background: repeating-linear-gradient(90deg,
-                #000,
-                #000 3px,
-                white 3px,
-                white 6px);
-        margin: 2% auto 1.5rem;
-    } */
-}
+    
+} */

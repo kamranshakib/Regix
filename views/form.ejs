@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.form.css">
+    <link rel="stylesheet" href="/css/style.form.css">
 </head>
 
 <body>
@@ -17,22 +17,22 @@
             <div class="header">
                 <h1>فورم ثبت نام امتحان کانکور واره</h1>
             </div>
-            <form action="/register-student" method="post">
+            <form action="/register" method="post">
                 <div class="main-form">
                     <div class="one">
-                        <input name="name" type="text" placeholder=" نام ">
+                        <input name="name" type="text" placeholder=" نام " required>
                         <input name="Fname" placeholder=" نام پدر" type="text">
-                        <input name="Lname" placeholder=" تخلص" type="text">
+                        <input name="Lname" placeholder=" تخلص" type="text" required>
                         <input name="GFname" type="text" placeholder="  نام پدر کلان">
                             
                     </div>
                     <div class="one">
                   
                         
-                        <input name="Graduation" type="text" placeholder=" سال فراغت">
-                        <input name="BirthD ay" type="text" placeholder="سال تولد">
+                        <input name="Graduation" type="number" placeholder=" سال فراغت">
+                        <input name="BirthDay" type="number" placeholder="سال تولد">
                         <input name="CenterName" type="text" placeholder="اسم مرکز ">
-                        <select name="ExamLang" id=""  ">
+                        <select name="ExamLang" id=""  >
                             <option value="">زبان امتحان</option>
                             <option value="دری">دری</option>
                             <option value="پشتو">پشتو</option>
@@ -40,10 +40,9 @@
                     </div>
                     <div class="one">
                         <input name="Province" type="text" placeholder="ولایت">
-                        <input name="School" type="text" placeholder="مکتب">
+                        <input name="School" type="text" placeholder="مکتب" required>
                         <input name="NumberRoom" type="text" placeholder="نمبر اتاق">
-                        <!-- <input type="text" placeholder="مکان امتحان"  value="آموزشگاه عالی امید افغانستان"> -->
-                        <select style="font-size: 13px;" name="ExamPlace" id=""  ">
+                        <select style="font-size: 13px;" name="ExamPlace" id=""  >
                             <option value="">مکان امتحان</option>
                             <option  value="آموزشگاه عالی امید افغانستان">آموزشگاه عالی امید افغانستان</option>
                         </select>
@@ -69,7 +68,6 @@
             </div>
 
             <div class="desc">
-                <!-- <img src="./Image/Untitled-2-1.png" alt=""> -->
                 
             </div>
         </div>
