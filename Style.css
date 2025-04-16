@@ -174,8 +174,8 @@ button:hover{
   
     .container .right {
         width: 100%;
-        height: 270px; /* اینجا قبلاً height: auto هست، ولی اگه ارتفاع زیادی داشت... */
-        min-height: 200px; /* این خط رو اضافه کن که دیگه خیلی بلند نباشه */
+        height: 270px; 
+        min-height: 200px; 
         border-radius: 10px 10px 0 0;
         display: flex;
         flex-direction: column;
