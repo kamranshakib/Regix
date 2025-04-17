@@ -37,7 +37,7 @@ const SetForm = async (req, res) => {
 
     res.render('GetForm.ejs', {
       newStudent,
-      studentID: nextID,
+      studentID:nextID
     });
   } catch (error) {
     console.error('Error saving student:', error);
