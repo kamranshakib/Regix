@@ -67,7 +67,7 @@ body {
 }
 
 .final_div{
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     height: 230px;
