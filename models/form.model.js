@@ -2,19 +2,19 @@ const mongoose = require('mongoose')
 
 
 const FormSchema = new mongoose.Schema({
-  name: { type: String }, // اسم شاگرد
-  Lname: { type: String }, // تخلص
-  ID: { type: Number }, // ایدی
-  Fname: { type: String }, // اسم پدر
-  GFname: { type: String }, // اسم پدرکلان
-  BirthDay: { type: Number }, // روز تولد
-  Graduation: { type: Number }, // سال فراغت
-  School: { type: String }, // مکتب
-  Province: { type: String }, // ولایت
-  ExamLang: { type: String }, // زبان امتحان
-  CenterName: { type: String }, // اسم مرکز
-  ExamPlace: { type: String }, // مکان امتحان
-  ExamTime: { type: String }, //زمان امتحان
+  name: { type: String },   
+  Lname: { type: String },  
+  ID: { type: Number }, 
+  Fname: { type: String },   
+  GFname: { type: String }, 
+  BirthDay: { type: Number }, 
+  Graduation: { type: Number }, 
+  School: { type: String }, 
+  Province: { type: String }, 
+  ExamLang: { type: String }, 
+  CenterName: { type: String }, 
+  ExamPlace: { type: String }, 
+  ExamTime: { type: String }, 
   studentID:{type: String}
 });
 
