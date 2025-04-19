@@ -34,6 +34,13 @@ const SetForm = async (req, res) => {
       studentID: nextID,
     };
 
+    if (req.body.money === '30') {
+      newStudent.intMoney = 30;
+    } else if (req.body.money === '50') {
+      newStudent.exMoney = 50;
+    }
+    console.log(req.body)
+
     const newST = new FormDB(newStudent);
     await newST.save();
 
@@ -56,6 +63,7 @@ const SetForm = async (req, res) => {
       fileName
     );
     fs.writeFileSync(filePath, barcodeBuffer);
+
     res.render('GetForm.ejs', {
       newStudent,
       studentID: nextID,
@@ -70,5 +78,6 @@ const SetForm = async (req, res) => {
       );
   }
 };
+
 
 module.exports = { SetForm, GetForm };
