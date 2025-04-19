@@ -13,32 +13,32 @@
   <div class="contains" id="terms" >
 
     <div class="content">
-      <div><p>آی دی </p> <p><%=studentID %></p></div>
-      <div><p>نام </p> <p><%=newStudent.name %></p></div>
-     <div> <p>تخلص/تخلص </p><p><%=newStudent.Lname %></p></div>
-      <div> <p>د پلارنوم /نام پدر</p> <p> <%=newStudent.Fname %></p></div>
-      <div><p >د نیکه نوم/نام پدر کلان</p> <p> <%=newStudent.GFname %></p></div>
-      <div><p >د زیژیدلو کال /سال تولد</p><p><%=newStudent.BirthDay %></p></div>
-      <div><p >د فراغت کال /سال فراغت</p><p><%=newStudent.Graduation %></p></div>
-      <div><p >ښوونخی /مکتب</p><p> <%=newStudent.School %></p></div>
-      <div><p >ولایت/ولایت </p><p><%=newStudent.Province %></p></div>
+      <div><p>آی دی </p> <p><%=studentID%></p></div>
+      <div><p>نام </p> <p><%=newStudent.name%></p></div>
+     <div> <p>تخلص/تخلص </p><p><%=newStudent.Lname%></p></div>
+      <div> <p>د پلارنوم /نام پدر</p> <p> <%=newStudent.Fname%></p></div>
+      <div><p >د نیکه نوم/نام پدر کلان</p> <p> <%=newStudent.GFname%></p></div>
+      <div><p >د زیژیدلو کال /سال تولد</p><p><%=newStudent.BirthDay%></p></div>
+      <div><p >د فراغت کال /سال فراغت</p><p><%=newStudent.Graduation%></p></div>
+      <div><p >ښوونخی /مکتب</p><p><%=newStudent.School%></p></div>
+      <div><p >ولایت/ولایت </p><p><%=newStudent.Province%></p></div>
     </div>
   
 
     <div class="middle" >
        <div class="top_middle">
          <div><h2>امارت اسلامی افغانستان </h2> <h2>د افغانستان اسلامی امارت </h2> </div>
-         <div class="image_logo"><img src="/log.png" alt=""></div>
+         <div class="image_logo"><img src="log.png" alt=""></div>
          <div><h2> د ازموینو ملی اداره</h2> <h2>اداره ملی امتحانات</h2></div>
     </div>
 
       <h3>کارت شمولیت امتحان آزمایشی ولایت هرات</h3>
 
       <div class="botton_middle">
-         <div><p>د آزموینی ژبه /لسان امتحان </p><p><%= newStudent.ExamLang %></p></div>
-         <div> <p >د مرکز نوم/اسم مرکز </p> <p><%= newStudent.CenterName %></p></div>
-         <div><p >د آزموینی ځای /محل امتحان </p> <p> <%= newStudent.ExamPlace %></p></div>
-         <div><p >د خونی شمیره/نمبر اطاق </p><p><%= newStudent.NumberRoom %></p></div>
+         <div><p>د آزموینی ژبه /لسان امتحان </p><p><%=newStudent.ExamLang%></p></div>
+         <div> <p >د مرکز نوم/اسم مرکز </p> <p><%=newStudent.CenterName%></p></div>
+         <div><p >د آزموینی ځای /محل امتحان </p> <p> <%=newStudent.ExamPlace%>  </p></div>
+         <div><p >د خونی شمیره/نمبر اطاق </p><p><%=newStudent.NumberRoom%></p></div>
       </div>
     </div>
 
@@ -46,9 +46,9 @@
 
 
     <div class="final_div" >
-      <div style="transform: translateY(-10px);" class="timeOf"><p class="">زمان امتحان </p> <p>2 بعد از ظهر 21 حمل</p></div>
+      <div style="transform: translateY(-10px);" class="timeOf"><p class="">زمان امتحان </p> <p><%=newStudent.TimeExam %></p></div>
       <div class="qr">
-       <img style="width: 300px;" src="<%= barcodeImage %>" alt="بارکد" />
+       <img class="qrcode1" src="<%= barcodeImage %>" alt="بارکد" />
        <p class="">برای حل ورق جوابات از قلم رنگ سیاه استفاده نماید</p>
       </div>
     </div>
@@ -60,45 +60,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <button class="btn-print" onclick="window.print()"><i class="fas fa-print" style="margin-right: 2%;"></i>Print Page</button>
-  <script>
-    JsBarcode("#barcode", "133434534534", {
-      format: "CODE128",
-      lineColor: "#000",
-      width: 2,
-      height: 40,
-      displayValue: true
-    });
-
-    const data = [
-      { id: 1, name: "Item One", value: 100 },
-      { id: 2, name: "Item Two", value: 200 },
-      { id: 3, name: "Item Three", value: 300 },
-    ];
-
-    const tbody = document.getElementById("data-table");
-    data.forEach(item => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>${item.value}</td>
-      `;
-      tbody.appendChild(row);
-    });
-  </script>
+  <div class="printBtn"><button class="btn-print" onclick="window.print()"><i class="fas fa-print" style="margin-right: 2%;"></i>Print Page</button></div>
 </body>
 
 </html>

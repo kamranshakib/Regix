@@ -16,7 +16,7 @@ body{
 
 .container{
     width: 1000px;
-    height: 475px;
+    height: 485px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.189);
@@ -77,15 +77,17 @@ select{
 }
 .footer{
     background-color: rgba(130, 130, 130, 0.059);
-    height: 90px;
+    height: 0px;
     align-items: center;
     display: flex;
     text-align: center;
     justify-content: center;
     margin-top: 20px;
+        /* transform: translateY(-20px); */
+
 }
 .footer button{
-    padding: 4px 25px;
+    padding: 4px 50px;
     border: none;
     background-color: rgb(6, 135, 96);
     color: white;

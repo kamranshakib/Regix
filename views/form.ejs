@@ -20,11 +20,11 @@
             <form action="/register" method="post">
                 <div class="main-form">
                     <div class="one">
-                        <input name="name" type="text" placeholder=" نام " required>
+                        <input name="name"  placeholder=" نام " type="text" required>
                         <input name="Fname" placeholder=" نام پدر" type="text">
                         <input name="Lname" placeholder=" تخلص" type="text" required>
-                        <input name="GFname" type="text" placeholder="  نام پدر کلان">
-                            
+                        <input name="GFname"   type="text" placeholder="  نام پدر کلان">
+                        <input name="TimeExam"  type="text" placeholder="زمان امتحان">
                     </div>
                     <div class="one">
                   
@@ -33,18 +33,24 @@
                         <input name="BirthDay" type="number" placeholder="سال تولد">
                         <input name="CenterName" type="text" placeholder="اسم مرکز ">
                         <select name="ExamLang" id=""  >
-                            <option value="">زبان امتحان</option>
+                            <option value="" disabled selected>زبان امتحان</option>
                             <option value="دری">دری</option>
                             <option value="پشتو">پشتو</option>
                         </select>
+
                     </div>
                     <div class="one">
                         <input name="Province" type="text" placeholder="ولایت">
                         <input name="School" type="text" placeholder="مکتب" required>
                         <input name="NumberRoom" type="text" placeholder="نمبر اتاق">
                         <select style="font-size: 13px;" name="ExamPlace" id=""  >
-                            <option value="">مکان امتحان</option>
+                            <option value=""  disabled selected>مکان امتحان</option>
                             <option  value="آموزشگاه عالی امید افغانستان">آموزشگاه عالی امید افغانستان</option>
+                        </select>
+                             <select name="" id=""  >
+                            <option value="" disabled selected> فیس شاگرد</option>
+                            <option value="30">داخلی 30 افغانی</option>
+                            <option value="50">خارجی 50 افغانی </option>
                         </select>
                     </div>  
                 </div>

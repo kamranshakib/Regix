@@ -6,8 +6,10 @@
 }
 
 body {
-    gap: 5%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
 }
 
 .contains {
@@ -30,7 +32,6 @@ body {
 }
 
 .middle{
-    /* background-color: blue; */
     display: flex;
     flex-direction: column;
     width: 45%;
@@ -42,32 +43,29 @@ body {
     justify-content: space-between;
 }
 .middle h3{
-    
     text-align: center;
     margin-top: 30px;
     margin-right: 50px;
 }
 .botton_middle{
     margin-top: 10px;
-    /* margin-right: 190px; */
     width: 100%;
     direction: rtl;
     text-align: center;
 
 }
 .botton_middle div{
-    /* background-color: red; */
     display: flex;
     justify-content:space-between;
     width: 100%;
     
 }
 .middle .image_logo img{
-    width: 100px;
+    width: 17vh;
+    height: 17vh;
 }
 
 .final_div{
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     height: 230px;
@@ -78,299 +76,228 @@ body {
     justify-content: space-between;
 }
 
-
-/* 
-.contains .imag_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.printBtn{
+  text-align: left;
+  width: 100%;
 }
 
-.contains .imag_content img {
-    width: 15vh;
-    height: 15vh;
-    margin-right: 1%;
-    margin-left: 1%;
+.btn-print{
+  width: 20vh;
+  padding: 1%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #038062;
 }
 
-.contains .imag_content h1 {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    font-size: 1rem;
+.btn-print:hover{
+  background-color: #046851;
 }
-
-.contains .image_place {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10%;
-    left: 1.5%;
-}
-
-.contains .image_place img {
-   
-    width: 15vh;
-    height: 15vh;
-}
-
-.contains .content {
-    width: 100%;
-}
-
-.contains .content .id {
-    top: 23%;
-    right: 2.5%;
-    width: 25%;
-    font-weight: 500;
-    position: absolute;
-    font-size: 0.8rem;
-    padding: 0.5%;
-    font-weight: 600;
-    margin-right: 1%;
-}
-
-.contains .content .id span {
-    margin-right: 47%;
-}
-
-.contains .content p {
-    font-size: 0.8rem;
-    padding: 0.5%;
-    font-weight: 600;
-}
-
-.contains .content .name span {
-    margin-right: 17%;
-}
-
-.contains .content .Lname span {
-    margin-right: 14%;
-}
-
-.contains .content .fname span {
-    margin-right: 12%;
-}
-
-.contains .content .GFname span {
-    margin-right: 10%;
-}
-
-.contains .content .birthday span {
-    margin-right: 10%;
-}
-
-.contains .content .graduateY span {
-    margin-right: 9%;
-}
-
-.contains .content .School span {
-    margin-right: 13%;
-}
-
-.contains .content .Province span {
-    margin-right: 14%;
-}
-
-.allContent p {
-    font-size: 0.8rem;
-    padding: 0.5%;
-    font-weight: 600;
-}
-
-.contains .registerCard .allContent .lExam span {
-    margin-right: 27.5%;
-}
-
-.contains .registerCard .allContent .nCenter span {
-    margin-right: 35%;
-}
-
-.contains .registerCard .allContent .loExam span {
-    margin-right: 12%;
-}
-
-.contains .registerCard .allContent .noRoom span {
-    margin-right: 30%;
-}
-
-.contains .registerCard {
- 
-    width: 35%;
-    left: 30%;
-    top: 43%;
-    position: absolute;
-}
-
-.contains .registerCard h1 {
-    font-size: 1rem;
-}
-
-.contains .registerCard .allContent {
-    margin-top: 5%;
-    text-align: right;
-}
-
-.contains .registerCard .allContent p {
-    font-size: 0.8rem;
-    padding: 0.5%;
-    font-weight: 600;
-}
-
-.contains .registerCard .allContent .lExam span {
-    margin-right: 27.5%;
-}
-
-.contains .registerCard .allContent .nCenter span {
-    margin-right: 35%;
-}
-
-.contains .registerCard .allContent .loExam span {
-    margin-right: 12%;
-}
-
-.contains .registerCard .allContent .noRoom span {
-    margin-right: 30%;
-}
-
-.contains .barCode-Content {
-    margin-right: 5%;
-   
-    width: 50vh;
-    text-align: center;
-    padding: 2%;
-    top: 45%;
-    left: 2%;
-    position: absolute;
-}
-
-
-.contains .barCode-Content .time {
-    padding-right: 10%;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.contains .barCode-Content .time span {
-    margin-right: 20%;
-}
-
-.contains .barCode-Content .barcode {
-    width: 32vh;
-    height: 5vh;
-    background: repeating-linear-gradient(90deg,
-            #000,
-            #000 3px,
-            white 3px,
-            white 6px);
-    margin: 2% auto 1.5rem;
-}
-
-
-.contains .barCode-Content .note {
-    text-align: center;
-    width: 20vh;
-}
-
-button{
-    width: 25vh;
-    background: green;
-    padding: 1%;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin-top: 5%;
-    cursor: pointer;
-}
-
-button:hover{
-    color: black;
-    background: rgb(8, 102, 8);
-}
-
 
 @media print {
-    body {
-        background: white;
-        padding: 0;
-    }
-
-    .btn-print {
-        display: none;
-    }
-
-    .container {
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0;
-    }
-
-    h1 {
-        margin-top: 0;
-    }
-}
-
-
-@media(max-width: 682px){
-    .allContent p {
-        font-size: 0.2rem;
-        padding: 0.5%;
-        font-weight: 400;
-    }
-    
-    .contains .registerCard .allContent .lExam span {
-        margin-right: 10%;
-    }
-    
-    .contains .registerCard .allContent .nCenter span {
-        margin-right: 10%;
-    }
-    
-    .contains .registerCard .allContent .loExam span {
-        margin-right: 15vh;
-    }
-    
-    .contains .registerCard .allContent .noRoom span {
-        margin-right: 10%;
-    }
-    
-} */
-@@media print {
   * {
     box-shadow: none !important;
     background: none !important;
     color: black !important;
+    margin: 0;
+    padding: 0;
   }
 
   body {
-    width: 210mm;
-    height: 297mm;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+  }
+
+  .btn-print{
+    display: none;
   }
 
   .contains {
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    gap: 20px;
-    padding: 10mm;
-    border: none;
+    position: relative;
   }
 
+  .middle h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+  .final_div{
+    display: flex;
+    position: absolute;
+    width: 20%;
+    left: 1%;
+    top: -22.5%;
+}
+
+.final_div p{
+  font-size: 0.7rem;
+}
+
   .content {
-    width: 25%;
-    margin-top: 0;
+    width: 22.5%;
+    margin-top: 10%;
+  }
+
+  .content p{
+    font-size: 0.7rem;
   }
 
   .middle {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .middle .top_middle h2{
+    font-size: 0.8rem;
   }
 
-  .final_div {
-    display: none !important; /* اون قرمزه حذف شه */
+  .botton_middle{
+    width: 100%;
   }
+
+  .middle .image_logo img{
+    width: 7vh;
+    height: 7vh;
+}
+
+
+}
+
+@media(max-width: 884px){
+
+  body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+  }
+
+
+  .contains {
+    width: 100%;
+    position: relative;
+  }
+
+  .middle h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+  .final_div{
+    display: flex;
+    position: absolute;
+    width: 20%;
+    left: 1%;
+    top: -22.5%;
+}
+
+.final_div p{
+  font-size: 0.7rem;
+}
+
+  .content {
+    width: 22.5%;
+    margin-top: 10%;
+  }
+
+  .content p{
+    font-size: 0.7rem;
+  }
+
+  .middle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .middle .top_middle h2{
+    font-size: 0.8rem;
+  }
+
+  .botton_middle{
+    width: 100%;
+  }
+
+  .middle .image_logo img{
+    width: 7vh;
+    height: 7vh;
+}
+
+.qrcode1{
+  width: 130px;
+  height: 30px;
+}
+
+}
+
+
+@media(max-width: 390px){
+  body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+  }
+
+  .contains {
+    width: 100%;
+    position: relative;
+  }
+
+  .middle h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+  .final_div{
+    display: flex;
+    position: absolute;
+    width: 20%;
+    left: 1%;
+    top: -22.5%;
+}
+
+.final_div p{
+  font-size: 0.7rem;
+}
+
+  .content {
+    width: 22.5%;
+    margin-top: 10%;
+  }
+
+  .content p{
+    font-size: 0.7rem;
+  }
+
+  .middle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .middle .top_middle h2{
+    font-size: 0.8rem;
+  }
+
+  .botton_middle{
+    width: 100%;
+  }
+
+  .middle .image_logo img{
+    width: 7vh;
+    height: 7vh;
+}
 }
