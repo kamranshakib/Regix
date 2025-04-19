@@ -7,15 +7,11 @@ const bwipjs = require('bwip-js');
 const path = require('path');
 const fs = require('fs');
 
-
-  
 const GetForm = async (req, res) => {
   res.render('form.ejs');
-};       
- 
-const SetForm = async (req, res) => {
+};
 
-   
+const SetForm = async (req, res) => {
   try {
     const lastStudent = await FormDB.findOne()
       .sort({ studentID: -1 })
@@ -41,18 +37,16 @@ const SetForm = async (req, res) => {
     const newST = new FormDB(newStudent);
     await newST.save();
 
- 
-    const barcodeText = ` آی‌دی: ${nextID} ` ;
+    const barcodeText = ` آی‌دی: ${nextID} `;
 
     const barcodeBuffer = await bwipjs.toBuffer({
-      bcid: 'code128', 
-      text: barcodeText, 
+      bcid: 'code128',
+      text: barcodeText,
       scale: 1,
       height: 20,
       textxalign: 'center',
     });
 
-  
     const fileName = `barcode-${nextID}.png`;
     const filePath = path.join(
       __dirname,
@@ -75,9 +69,6 @@ const SetForm = async (req, res) => {
         `خطا در ذخیره شاگرد: ${error.message}`
       );
   }
-
-  
 };
 
 module.exports = { SetForm, GetForm };
-   

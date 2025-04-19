@@ -228,6 +228,23 @@ body {
   .botton_middle{
     width: 100%;
   }
+  #zeman p{
+    transform: translateX(10px);
+    font-size: 10px;
+
+  }
+  #zeman2{
+    margin-left: 10px;
+  }
+  #p-large{
+    transform: translateX(-10px);
+  }
+  #p-middle2{
+    transform: translateX(60px);
+  }
+  .botton_middle p{
+    font-size: 13px;
+  }
 
   .middle .image_logo img{
     width: 7vh;
@@ -237,6 +254,8 @@ body {
 .qrcode1{
   width: 130px;
   height: 30px;
+  transform: translateY(10px);
+  margin-bottom: 10px;
 }
 
 }

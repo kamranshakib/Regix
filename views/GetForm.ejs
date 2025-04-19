@@ -13,11 +13,11 @@
   <div class="contains" id="terms" >
 
     <div class="content">
-      <div><p>آی دی </p> <p><%=studentID%></p></div>
+      <div><p>آی دی </p> <p id="p-large"><%=studentID%></p></div>
       <div><p>نام </p> <p><%=newStudent.name%></p></div>
      <div> <p>تخلص/تخلص </p><p><%=newStudent.Lname%></p></div>
       <div> <p>د پلارنوم /نام پدر</p> <p> <%=newStudent.Fname%></p></div>
-      <div><p >د نیکه نوم/نام پدر کلان</p> <p> <%=newStudent.GFname%></p></div>
+      <div><p >د نیکه نوم/نام پدر کلان</p> <p id="p-large"> <%=newStudent.GFname%></p></div>
       <div><p >د زیژیدلو کال /سال تولد</p><p><%=newStudent.BirthDay%></p></div>
       <div><p >د فراغت کال /سال فراغت</p><p><%=newStudent.Graduation%></p></div>
       <div><p >ښوونخی /مکتب</p><p><%=newStudent.School%></p></div>
@@ -35,10 +35,10 @@
       <h3>کارت شمولیت امتحان آزمایشی ولایت هرات</h3>
 
       <div class="botton_middle">
-         <div><p>د آزموینی ژبه /لسان امتحان </p><p><%=newStudent.ExamLang%></p></div>
-         <div> <p >د مرکز نوم/اسم مرکز </p> <p><%=newStudent.CenterName%></p></div>
-         <div><p >د آزموینی ځای /محل امتحان </p> <p> <%=newStudent.ExamPlace%>  </p></div>
-         <div><p >د خونی شمیره/نمبر اطاق </p><p><%=newStudent.NumberRoom%></p></div>
+         <div><p>د آزموینی ژبه /لسان امتحان </p><p  id="p-middle2"><%=newStudent.ExamLang%></p></div>
+         <div> <p >د مرکز نوم/اسم مرکز </p> <p id="p-middle2"><%=newStudent.CenterName%></p></div>
+         <div><p >د آزموینی ځای /محل امتحان </p id="p-middle2"> <p> <%=newStudent.ExamPlace%>  </p></div>
+         <div><p >د خونی شمیره/نمبر اطاق </p><p id="p-middle2"><%=newStudent.NumberRoom%></p></div>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
 
 
     <div class="final_div" >
-      <div style="transform: translateY(-10px);" class="timeOf"><p class="">زمان امتحان </p> <p><%=newStudent.TimeExam %></p></div>
+      <div id="zeman" class="timeOf"><p>زمان امتحان :</p> <p id="zeman2"><%=newStudent.ExamTime %></p></div>
       <div class="qr">
        <img class="qrcode1" src="<%= barcodeImage %>" alt="بارکد" />
        <p class="">برای حل ورق جوابات از قلم رنگ سیاه استفاده نماید</p>

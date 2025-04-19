@@ -25,6 +25,9 @@ body{
 .container .right{
     background: linear-gradient(180deg,rgb(0, 88, 67) 20%, rgba(1, 122, 84, 0.833) 70% );
     width: 300px;
+    border-left: 3px solid rgba(0, 0, 0, 0.403);
+    border-right: 3px solid rgba(0, 0, 0, 0.403);
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.605);
     height: 100%;
     border-radius: 30px 10px 10px 30px;
     overflow: hidden;
@@ -33,6 +36,7 @@ body{
     /* background-color: antiquewhite; */
     width: 70%;
     height: 100%;
+    border-left: 2px solid rgba(0, 0, 0, 0.208);
 }
 .container .left .main-form{
 display: flex;

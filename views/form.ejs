@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>فورم ثبت نام شاگردان</title>
+    <link rel="icon" href="../Image/log.png">
     <link rel="stylesheet" href="/css/style.form.css">
 </head>
 
 <body>
+    <style>
+        #submit{
+           background: linear-gradient(245deg,rgb(0, 88, 67) 20%, rgba(1, 122, 84, 0.833) 70% );
+           color: white;
+           font-size: 20px;
+           border-radius: 50px;
+           border-right:3px solid black ;
+           border-left:3px solid black ;
+           border-bottom:3px solid black ;
+           box-shadow: 0 5px 5px rgba(0, 8, 0, 0.174);
+           font-weight: bold;
+        }
+    </style>
 
 
     <div class="container">
@@ -24,7 +38,7 @@
                         <input name="Fname" placeholder=" نام پدر" type="text">
                         <input name="Lname" placeholder=" تخلص" type="text" required>
                         <input name="GFname"   type="text" placeholder="  نام پدر کلان">
-                        <input name="TimeExam"  type="text" placeholder="زمان امتحان">
+                         <input name="School" type="text" placeholder="مکتب" required>
                     </div>
                     <div class="one">
                   
@@ -32,33 +46,34 @@
                         <input name="Graduation" type="number" placeholder=" سال فراغت">
                         <input name="BirthDay" type="number" placeholder="سال تولد">
                         <input name="CenterName" type="text" placeholder="اسم مرکز ">
-                        <select name="ExamLang" id=""  >
+                         <input name="Province" type="text" placeholder="ولایت">
+                        <input name="NumberRoom" type="text" placeholder="نمبر اتاق">
+
+                    </div>
+                    <div class="one">
+                       
+                       
+                        <input name="ExamTime" type="text" placeholder="زمان امتحان">
+                         <select name="ExamLang" id=""  >
                             <option value="" disabled selected>زبان امتحان</option>
                             <option value="دری">دری</option>
                             <option value="پشتو">پشتو</option>
                         </select>
-
-                    </div>
-                    <div class="one">
-                        <input name="Province" type="text" placeholder="ولایت">
-                        <input name="School" type="text" placeholder="مکتب" required>
-                        <input name="NumberRoom" type="text" placeholder="نمبر اتاق">
+                       
                         <select style="font-size: 13px;" name="ExamPlace" id=""  >
                             <option value=""  disabled selected>مکان امتحان</option>
                             <option  value="آموزشگاه عالی امید افغانستان">آموزشگاه عالی امید افغانستان</option>
                         </select>
-                             <select name="" id=""  >
+                             <select name="money" id=""  >
                             <option value="" disabled selected> فیس شاگرد</option>
                             <option value="30">داخلی 30 افغانی</option>
                             <option value="50">خارجی 50 افغانی </option>
                         </select>
+                        <input id="submit" type="submit" value="ثبت">
                     </div>  
                 </div>
 
-                <div class="footer">
-                    <button> ثبت</button>
-                </div>
-
+               
             </form>
 
         </div>

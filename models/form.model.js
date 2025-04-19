@@ -15,7 +15,9 @@ const FormSchema = new mongoose.Schema({
   CenterName: { type: String }, 
   ExamPlace: { type: String }, 
   ExamTime: { type: String }, 
-  studentID:{type: String}
+  studentID:{type: String},
+  exMoney : {type: String},
+  intMoney : {type: String}
 });
 
 module.exports = mongoose.model('Register-fomr-ST', FormSchema)
