@@ -78,6 +78,24 @@ const SetForm = async (req, res) => {
       );
   }
 };
+const getMoney = async (req, res) => {
+  try {
+    const data = await FormDB.find({},{ intMoney: 1, exMoney: 1, _id: 0 });
+ 
+    const totalIntMoney = data.reduce((sum, item) => sum + (item.intMoney || 0),0);
+    const totalExMoney = data.reduce((sum, item) => sum + (item.exMoney
+       || 0), 0)
+    res.json({
+      totalIntMoney,
+      totalExMoney,
+    });
+  } catch (error) {
+    console.error('خطا:', error);
+    res
+      .status(500)
+      .json({ message: 'خطا در جمع پول‌ها' });
+  }
+};
 
 
-module.exports = { SetForm, GetForm };
+module.exports = { SetForm, GetForm, getMoney };
