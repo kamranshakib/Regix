@@ -19,15 +19,24 @@ body {
     width: 100%;
     display: flex;
     gap: 5%;
-    overflow: hidden;
-    background-image: url('../Image/log.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 25%;
-    background-position: center;
-    
+    overflow: hidden;  
+    position: relative;
 
 }
+
+.backgroundLogo{
+  position: absolute;
+  z-index: 1;
+
+}
+
+.backgroundLogo img{
+  width: 360px;
+  margin: -20px 520px;
+  opacity: 0.1;
+}
+
+
 .content div{
     display: flex;  
     justify-content: space-between;
@@ -43,16 +52,18 @@ body {
     flex-direction: column;
     width: 45%;
     justify-content: center;
+    z-index: 2;
 }
 
 .middle .top_middle{
     display: flex;
     justify-content: space-between;
+
 }
 .middle h3{
     text-align: center;
     margin-top: 30px;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 .botton_middle{
     margin-top: 10px;
@@ -70,6 +81,7 @@ body {
 .middle .image_logo img{
     width: 17vh;
     height: 17vh;
+    transform: translateX(15px);
 }
 
 .final_div{
@@ -208,6 +220,14 @@ body {
 
 }
 
+
+.backgroundLogo img{
+  width: 250px;
+  margin: -20px 250px;
+  opacity: 0.1;
+}
+
+
   .contains {
     width: 100%;
     position: relative;
@@ -248,6 +268,7 @@ body {
   }
   .middle .top_middle h2{
     font-size: 0.8rem;
+    transform: translateX(10px);
   }
 
   .botton_middle{
