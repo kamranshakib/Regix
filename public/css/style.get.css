@@ -5,6 +5,7 @@
     font-family: dana
 }
 
+
 body {
     padding: 20px;
     display: flex;
@@ -19,6 +20,12 @@ body {
     display: flex;
     gap: 5%;
     overflow: hidden;
+    background-image: url('../Image/log.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 25%;
+    background-position: center;
+    
 
 }
 .content div{
@@ -172,6 +179,17 @@ body {
 
 
 }
+.photo{
+  border: 1px solid rgba(0, 0, 0, 0.212);
+  height: 180px;
+  width: 170px;
+  margin-top: -200px;
+  margin-bottom: 20px;
+  transform: translateX(-130px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media(max-width: 884px){
 
@@ -181,7 +199,14 @@ body {
     flex-direction: column;
     gap: 2.5vh;
   }
+.photo{
+  transform: translateX(0);
+  width: 100px;
+  height: 110px;
+  margin-top: -130px;
+  margin-right: 20px;
 
+}
 
   .contains {
     width: 100%;
