@@ -58,12 +58,16 @@ body {
 .middle .top_middle{
     display: flex;
     justify-content: space-between;
-
+        
+}
+.top_middle h2{
+  font-family: B Titr;
 }
 .middle h3{
     text-align: center;
     margin-top: 30px;
     margin-right: 40px;
+    font-family: B Titr;
 }
 .botton_middle{
     margin-top: 10px;
@@ -92,7 +96,7 @@ body {
 }
 .final_div .timeOf{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .printBtn{
@@ -224,7 +228,7 @@ body {
 .backgroundLogo img{
   width: 250px;
   margin: -20px 265px;
-  opacity: 0.1;
+  opacity: 0.4;
 }
 
 
@@ -249,7 +253,7 @@ body {
 }
 
 .final_div p{
-  font-size: 0.7rem;
+  font-size: 0.5rem;
 }
 
   .content {
@@ -258,7 +262,8 @@ body {
   }
 
   .content p{
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    font-weight: bold;
   }
 
   .middle {
@@ -267,21 +272,23 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+  .middle p{
+    font-size: 0.6rem !important;
+    font-weight: bold;
+  }
   .middle .top_middle h2{
-    font-size: 0.8rem;
+    font-size: 1rem;
     transform: translateX(10px);
   }
 
   .botton_middle{
     width: 100%;
   }
-  #zeman p{
-    transform: translateX(10px);
-    font-size: 10px;
-
-  }
+ 
   #zeman2{
-    margin-left: 10px;
+    margin-left: 30px;
+    font-size: 7px;
+    
   }
   #p-large{
     transform: translateX(-10px);
@@ -301,12 +308,14 @@ body {
   transform: translateX(-20px);
 }
 
+
 .qrcode1{
-  width: 130px;
-  height: 30px;
-  transform: translateY(10px);
-  margin-bottom: 10px;
-}
+  width: 200px;
+ 
+  margin-top: 20px;
+  transform: translateX(50px);
+  
+} 
 
 }
 

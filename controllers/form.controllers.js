@@ -39,7 +39,6 @@ const SetForm = async (req, res) => {
     } else if (req.body.money === '50') {
       newStudent.exMoney = 50;
     }
-    console.log(req.body)
 
     const newST = new FormDB(newStudent);
     await newST.save();
@@ -50,7 +49,7 @@ const SetForm = async (req, res) => {
       bcid: 'code128',
       text: barcodeText,
       scale: 1,
-      height: 20,
+      height: 10,
       textxalign: 'center',
     });
 
