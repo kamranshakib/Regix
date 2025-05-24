@@ -7,26 +7,33 @@
     <title>فورم ثبت نام شاگردان</title>
     <link rel="icon" href="../Image/log.png">
     <link rel="stylesheet" href="/css/style.form.css">
+    <style>
+        #submit {
+            background: linear-gradient(245deg, rgb(0, 88, 67) 20%, rgba(1, 122, 84, 0.833) 70%);
+            color: white;
+            font-size: 20px;
+            border-radius: 50px;
+            border-right: 3px solid black;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+            box-shadow: 0 5px 5px rgba(0, 8, 0, 0.174);
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-        #submit{
-           background: linear-gradient(245deg,rgb(0, 88, 67) 20%, rgba(1, 122, 84, 0.833) 70% );
-           color: white;
-           font-size: 20px;
-           border-radius: 50px;
-           border-right:3px solid black ;
-           border-left:3px solid black ;
-           border-bottom:3px solid black ;
-           box-shadow: 0 5px 5px rgba(0, 8, 0, 0.174);
-           font-weight: bold;
-        }
-    </style>
 
+    <!-- دکمه تغییر آی‌دی شروع -->
+    <div style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
+        <button onclick="document.getElementById('id-modal').style.display='block'" 
+                style="background-color: darkgreen; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-size: 14px;">
+            تغییر آی‌دی شروع
+        </button>
+    </div>
 
     <div class="container">
-              
+
         <div class="left">
             <div class="header">
                 <h1>فورم ثبت نام امتحان کانکور واره</h1>
@@ -34,48 +41,39 @@
             <form action="/register" method="post">
                 <div class="main-form">
                     <div class="one">
-                        <input name="name"  placeholder=" نام " type="text" required>
+                        <input name="name" placeholder=" نام " type="text" required>
                         <input name="Fname" placeholder=" نام پدر" type="text">
                         <input name="Lname" placeholder=" تخلص" type="text" required>
-                        <input name="GFname"   type="text" placeholder="  نام پدر کلان">
-                         <input name="School" type="text" placeholder="مکتب" required>
+                        <input name="GFname" type="text" placeholder="  نام پدر کلان">
+                        <input name="School" type="text" placeholder="مکتب" required>
                     </div>
                     <div class="one">
-                  
-                        
                         <input name="Graduation" type="number" placeholder=" سال فراغت">
                         <input name="BirthDay" type="number" placeholder="سال تولد">
                         <input name="CenterName" type="text" placeholder="اسم مرکز ">
-                         <input name="Province" type="text" placeholder="ولایت">
+                        <input name="Province" type="text" placeholder="ولایت">
                         <input name="NumberRoom" type="text" placeholder="نمبر اتاق">
-
                     </div>
                     <div class="one">
-                       
-                       
                         <input name="ExamTime" type="text" placeholder="زمان امتحان">
-                         <select name="ExamLang" id=""  >
+                        <select name="ExamLang">
                             <option value="" disabled selected>زبان امتحان</option>
                             <option value="دری">دری</option>
                             <option value="پشتو">پشتو</option>
                         </select>
-                       
-                        <select style="font-size: 13px;" name="ExamPlace" id=""  >
-                            <option value=""  disabled selected>مکان امتحان</option>
-                            <option  value="آموزشگاه عالی امید افغانستان">آموزشگاه عالی امید افغانستان</option>
+                        <select style="font-size: 13px;" name="ExamPlace">
+                            <option value="" disabled selected>مکان امتحان</option>
+                            <option value="آموزشگاه عالی امید افغانستان">آموزشگاه عالی امید افغانستان</option>
                         </select>
-                             <select name="money" id=""  >
+                        <select name="money">
                             <option value="" disabled selected> فیس شاگرد</option>
                             <option value="30">داخلی 30 افغانی</option>
                             <option value="50">خارجی 50 افغانی </option>
                         </select>
                         <input id="submit" type="submit" value="ثبت">
-                    </div>  
+                    </div>
                 </div>
-
-               
             </form>
-
         </div>
 
         <div class="right">
@@ -85,15 +83,31 @@
 
             <div class="title">
                 <h2>آموزشگاه عالی امید افغانستان</h2>
-                <p class="Shoar">  ! با امید باش، موفق  شو   </p>
+                <p class="Shoar">! با امید باش، موفق شو</p>
             </div>
 
-            <div class="desc">
-                
-            </div>
+            <div class="desc"></div>
         </div>
 
     </div>
+
+    <!-- مودال تغییر آی‌دی شروع -->
+    <div id="id-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.4); z-index: 2000;">
+        <div style="background-color: white; margin: 10% auto; padding: 20px; width: 300px; border-radius: 10px; position: relative;">
+            <h3 style="text-align: center;">تغییر آی‌دی شروع</h3>
+            <form action="/set-start-id" method="POST">
+                <input type="text" name="newID" placeholder="مثلاً P24001234" required
+                       style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px;">
+                <button type="submit" style="width: 100%; background-color: darkgreen; color: white; padding: 8px; border: none; border-radius: 5px;">
+                    ذخیره
+                </button>
+            </form>
+            <button onclick="document.getElementById('id-modal').style.display='none'"
+                    style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+        </div>
+    </div>
+
 </body>
 
 </html>

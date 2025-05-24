@@ -1,9 +1,11 @@
 {
   "name": "omid-project",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-packager . Registration-of-Kankor --platform=win32 --arch=all --icon=omid.ico --out=dist --overwrite"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +17,12 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mogoose": "^0.0.1-security",
     "mongoose": "^8.13.2",
     "qrcode": "^1.5.4",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^36.3.1",
+    "electron-packager": "^17.1.2"
   }
 }
