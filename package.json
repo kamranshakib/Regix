@@ -1,16 +1,14 @@
 {
   "name": "omid-project",
   "version": "1.0.0",
+  "description": "Registration of Kankor",
   "main": "main.js",
+  "author": "Kamran Shakib",
+  "license": "ISC",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-packager . Registration-of-Kankor --platform=win32 --arch=all --icon=omid.ico --out=dist --overwrite"
+    "build": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bwip-js": "^4.5.4",
     "crypto": "^1.0.1",
@@ -23,6 +21,31 @@
   },
   "devDependencies": {
     "electron": "^36.3.1",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.omid.kankor",
+    "productName": "Registration of Kankor",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist",
+      "!node_modules/.cache"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "omid.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Kankor Registration"
+    }
   }
 }

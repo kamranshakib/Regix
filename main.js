@@ -10,36 +10,43 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1400,
     height: 1000,
+    icon: path.join(__dirname, 'omid.ico'),
     webPreferences: {
-      nodeIntegration: false,
-    },
+      preload: path.join(__dirname, 'preload.js'), // اگر نیاز داری
+      contextIsolation: true,
+      nodeIntegration: false
+    }
   });
 
   mainWindow.loadURL(`http://localhost:${port}/form`);
 
   mainWindow.webContents.on('did-finish-load', () => {
-    // فقط بعد از لود کامل صفحه
+    const pdfPath = path.join(__dirname, 'output.pdf');
     mainWindow.webContents.printToPDF({ printBackground: true }).then(data => {
-      const pdfPath = path.join(__dirname, 'output.pdf');
       fs.writeFile(pdfPath, data, (err) => {
-        if (err) return console.log('PDF Failed:', err);
-        console.log('PDF Saved to:', pdfPath);
+        if (err) return console.error('❌ PDF ذخیره نشد:', err);
+        console.log('✅ PDF ذخیره شد در:', pdfPath);
       });
-    }).catch(error => {
-      console.log('PDF Generation Error:', error);
-    });
+    }).catch(err => console.error('❌ خطا در تولید PDF:', err));
   });
 
-  mainWindow.on('closed', () => (mainWindow = null));
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
 }
 
+// فقط یکبار Express را راه‌اندازی کن
 app.whenReady().then(() => {
   expressApp.listen(port, () => {
-    console.log(`Express app running on http://localhost:${port}`);
+    console.log(`🚀 Express اجرا شد: http://localhost:${port}`);
     createWindow();
   });
 });
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });

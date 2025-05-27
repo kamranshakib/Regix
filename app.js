@@ -1,18 +1,27 @@
 const express = require('express');
 const app = express();
-const ejs = require('ejs')
+const path = require('path');
+const ejs = require('ejs');
 
-//  REQUIRE ROUTES...
-const SetForm = require('./routes/form.routes')
 
-// PART OF MIDDELWARES...
-app.use(express.json())
-app.use(express.urlencoded ({extended: true}))
+const isPackaged = __dirname.includes('app.asar');
 
-app.use(SetForm)
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+const publicPath = isPackaged
+  ? path.join(process.resourcesPath, 'public') // وقتی پکیج شده
+  : path.join(__dirname, 'public');           // وقتی در حالت توسعه است
+
+app.use(express.static(publicPath));
+
+// ROUTES
+const SetForm = require('./routes/form.routes');
+app.use(SetForm);
 
 module.exports = app;

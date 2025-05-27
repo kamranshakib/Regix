@@ -7,12 +7,10 @@ const xlsx = require('xlsx');
 const excelFilePath = path.join(__dirname, '..', 'data', 'students.xlsx');
 const idConfigPath = path.join(__dirname, '..', 'data', 'id-config.json');
 
-// اطمینان از وجود فولدر data
 if (!fs.existsSync(path.dirname(excelFilePath))) {
   fs.mkdirSync(path.dirname(excelFilePath), { recursive: true });
 }
 
-// گرفتن مقدار startID از فایل config
 const getStartID = () => {
   if (fs.existsSync(idConfigPath)) {
     const config = JSON.parse(fs.readFileSync(idConfigPath, 'utf-8'));
@@ -21,20 +19,18 @@ const getStartID = () => {
   return 'S00001';
 };
 
-// تولید آی‌دی بعدی با پشتیبانی از پیشوندهای مختلف
 const generateNextID = (lastID, startID) => {
-  const prefixMatch = startID.match(/^\D+/); // استخراج حروف اول
+ const prefixMatch = startID.match(/^\D+/); 
+
   const prefix = prefixMatch ? prefixMatch[0] : '';
   const lastNumber = lastID ? parseInt(lastID.replace(prefix, '')) : parseInt(startID.replace(prefix, ''));
   return prefix + (lastNumber + 1).toString().padStart(5, '0');
 };
 
-// نمایش فرم ثبت‌نام
 const GetForm = (req, res) => {
-  res.render('form.ejs');
+  res.render('form');
 };
 
-// ثبت فرم و تولید بارکد و ذخیره در Excel
 const SetForm = async (req, res) => {
   try {
     let workbook, worksheet;
@@ -51,7 +47,13 @@ const SetForm = async (req, res) => {
       workbook = xlsx.utils.book_new();
     }
 
-    const startID = getStartID();
+    const config = fs.existsSync(idConfigPath)
+      ? JSON.parse(fs.readFileSync(idConfigPath, 'utf-8'))
+      : {};
+
+    const startID = config.startID || 'S00001';
+    const examTime = config.examTime || '';
+
     const lastID = data.length > 0 ? data[data.length - 1].studentID : null;
     const nextID = (!lastID || parseInt(lastID.replace(/\D+/g, '')) < parseInt(startID.replace(/\D+/g, '')))
       ? startID
@@ -62,6 +64,7 @@ const SetForm = async (req, res) => {
       studentID: nextID,
       intMoney: req.body.money === '30' ? 30 : '',
       exMoney: req.body.money === '50' ? 50 : '',
+      examTime, 
     };
 
     data.push(newStudent);
@@ -69,7 +72,6 @@ const SetForm = async (req, res) => {
     const newSheet = xlsx.utils.json_to_sheet(data);
     const sheetName = 'Students';
 
-    // حذف شیت قبلی در صورت وجود
     const existingSheetIndex = workbook.SheetNames.indexOf(sheetName);
     if (existingSheetIndex > -1) {
       delete workbook.Sheets[sheetName];
@@ -79,7 +81,8 @@ const SetForm = async (req, res) => {
     xlsx.utils.book_append_sheet(workbook, newSheet, sheetName);
     xlsx.writeFile(workbook, excelFilePath);
 
-    // تولید بارکد
+    const isPackaged = typeof process !== 'undefined' && process.mainModule?.filename.includes('app.asar');
+
     const barcodeBuffer = await bwipjs.toBuffer({
       bcid: 'code128',
       text: `ID: ${nextID}`,
@@ -88,16 +91,27 @@ const SetForm = async (req, res) => {
       textxalign: 'center',
     });
 
+    const barcodeDir = isPackaged
+      ? path.join(process.resourcesPath, 'barcodes')
+      : path.join(__dirname, '..', 'public', 'barcodes');
+
+    if (!fs.existsSync(barcodeDir)) {
+      fs.mkdirSync(barcodeDir, { recursive: true });
+    }
+
     const fileName = `barcode-${nextID}.png`;
-    const barcodePath = path.join(__dirname, '..', 'public', 'barcodes', fileName);
-    const barcodeDir = path.dirname(barcodePath);
-    if (!fs.existsSync(barcodeDir)) fs.mkdirSync(barcodeDir, { recursive: true });
+    const barcodePath = path.join(barcodeDir, fileName);
+
     fs.writeFileSync(barcodePath, barcodeBuffer);
+
+    const barcodeImage = isPackaged
+      ? `file://${barcodePath}`
+      : `/barcodes/${fileName}`;
 
     res.render('GetForm.ejs', {
       newStudent,
       studentID: nextID,
-      barcodeImage: `/barcodes/${fileName}`,
+      barcodeImage,
     });
 
   } catch (error) {
@@ -106,20 +120,29 @@ const SetForm = async (req, res) => {
   }
 };
 
-// تغییر آی‌دی شروع
 const SetStartID = (req, res) => {
-  const { newID } = req.body;
+  const { newID, examTime } = req.body;
 
   if (!newID || newID.trim() === '') {
     return res.status(400).send('لطفاً یک آی‌دی وارد کنید.');
   }
 
+  if (!examTime || examTime.trim() === '') {
+    return res.status(400).send('لطفاً زمان امتحان را وارد کنید.');
+  }
+
   try {
-    fs.writeFileSync(idConfigPath, JSON.stringify({ startID: newID }, null, 2));
+    const config = {
+      startID: newID,
+      examTime: examTime, 
+    };
+
+    fs.writeFileSync(idConfigPath, JSON.stringify(config, null, 2), 'utf8');
+
     res.redirect('/form');
   } catch (error) {
-    console.error('خطا در ذخیره آی‌دی جدید:', error);
-    res.status(500).send('خطا در ذخیره آی‌دی جدید.');
+    console.error('خطا در ذخیره آی‌دی جدید یا زمان امتحان:', error);
+    res.status(500).send('خطا در ذخیره آی‌دی جدید یا زمان امتحان.');
   }
 };
 

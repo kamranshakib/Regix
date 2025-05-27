@@ -92,21 +92,32 @@
     </div>
 
     <!-- مودال تغییر آی‌دی شروع -->
-    <div id="id-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background-color: rgba(0,0,0,0.4); z-index: 2000;">
-        <div style="background-color: white; margin: 10% auto; padding: 20px; width: 300px; border-radius: 10px; position: relative;">
-            <h3 style="text-align: center;">تغییر آی‌دی شروع</h3>
-            <form action="/set-start-id" method="POST">
-                <input type="text" name="newID" placeholder="مثلاً P24001234" required
-                       style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px;">
-                <button type="submit" style="width: 100%; background-color: darkgreen; color: white; padding: 8px; border: none; border-radius: 5px;">
-                    ذخیره
-                </button>
-            </form>
-            <button onclick="document.getElementById('id-modal').style.display='none'"
-                    style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
-        </div>
+   <div id="id-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4); z-index: 2000;">
+    <div style="background-color: white; margin: 10% auto; padding: 20px; width: 300px; border-radius: 10px; position: relative;">
+        <h3 style="text-align: center;">تغییر آی‌دی شروع</h3>
+        <form action="/set-start-id" method="POST">
+            <input type="text" name="newID" placeholder="مثلاً P24001234" 
+                   style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px;">
+            
+            <!-- فیلد زمان امتحان -->
+            <label for="examTime" style="font-size: 14px; display: block; margin-bottom: 5px;">زمان امتحان:</label>
+            <input type="text" name="examTime" id="examTime"
+                   required
+                   style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px;">
+
+            <button type="submit"
+                    style="width: 100%; background-color: darkgreen; color: white; padding: 8px; border: none; border-radius: 5px;">
+                ذخیره
+            </button>
+        </form>
+
+        <!-- دکمه بستن -->
+        <button onclick="document.getElementById('id-modal').style.display='none'"
+                style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
     </div>
+</div>
+
 
 </body>
 
